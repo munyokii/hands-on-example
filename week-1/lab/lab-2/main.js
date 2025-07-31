@@ -4,8 +4,10 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "" // Replace with your MySQL password
+    password: "Mysql123!@#" // Replace with your MySQL password
 });
+
+console.log(connection.password)
 
 // Connect to MySQL
 connection.connect((err) => {
@@ -16,7 +18,7 @@ connection.connect((err) => {
     console.log("Connected to MySQL!");
 
     // SQL Query to Create Database
-    const dbName="" // Add a unique database name
+    const dbName="products" // Add a unique database name
     const createDBQuery = `CREATE DATABASE IF NOT EXISTS ${dbName}`;
 
     connection.query(createDBQuery, (err, result) => {
